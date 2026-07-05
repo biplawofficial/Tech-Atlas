@@ -1,0 +1,12 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.slim
+    image: sentiment:slim
+    ports:
+      - "8001:8000"
+    restart: unless-stopped
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
